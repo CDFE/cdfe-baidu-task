@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>任务三 三栏式布局</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			font-family: "Microsoft Yahei";
+			font-size: 16px;
+		}
+		.w{
+			position: relative;
+			padding:20px 140px 20px 220px;
+			background: #eee;
+			overflow: hidden;
+		}
+		.sub{
+			position: relative;
+			left: -200px;
+			float: left;
+			width: 160px;
+			margin-left: -100%;
+			padding: 20px;
+			background: #fff;
+		}
+		.main{
+			float: left;
+			width: 100%;
+		}
+		.main-content{
+			margin: 0 20px;
+			padding: 20px;
+			background: #fff;
+		}
+		.extra{
+			position: relative;
+			right: -120px;
+			float: left;
+			width: 80px;
+			margin-left: -120px;
+			padding: 20px;
+			background: #fff;
+		}
+		.sub .tt{
+			margin-left: 20px;
+			font-size: 18px;
+			vertical-align: top;
+		}
+		.extra img{
+			margin: 10px 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="w">
+		<div class="main">
+			<div class="main-content">
+				<p>团队介绍团队介绍</p>
+			</div>
+		</div>
+		<div class="sub">
+			<img src="" alt="logo" width="80" height="80">
+			<span class="tt">CDFE</span>
+		</div>
+		<div class="extra">
+			<img src="" alt="" width="80" height="80">
+			<img src="" alt="" width="80" height="80">
+			<img src="" alt="" width="80" height="80">
+			<img src="" alt="" width="80" height="80">
+			<img src="" alt="" width="80" height="80">
+		</div>
+	</div>
+</body>
+</html>
