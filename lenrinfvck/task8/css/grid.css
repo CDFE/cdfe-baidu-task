@@ -5,6 +5,13 @@ div {
   margin: 0;
   padding: 0;
 }
+h2 {
+  text-indent: 20px;
+  border-bottom: 1px solid #999;
+  margin: 0;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
 .con {
   background: #eee;
   height: 100%;
@@ -24,79 +31,89 @@ div {
           box-sizing: border-box;
 }
 .row {
-  margin: 0 -10px 0 -10px;
+  margin: 0 -10px;
+}
+.row:after {
+  content: ".";
+  height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+.row .row {
+  margin: -10px;
 }
 @media (min-width: 768px) {
   .col-md-1 {
     width: 8.33333333%;
   }
-  .col-md-1 .con:before {
+  .col-md-1 > .con:before {
     content: "1栏";
   }
   .col-md-2 {
     width: 16.66666667%;
   }
-  .col-md-2 .con:before {
+  .col-md-2 > .con:before {
     content: "2栏";
   }
   .col-md-3 {
     width: 25%;
   }
-  .col-md-3 .con:before {
+  .col-md-3 > .con:before {
     content: "3栏";
   }
   .col-md-4 {
     width: 33.33333333%;
   }
-  .col-md-4 .con:before {
+  .col-md-4 > .con:before {
     content: "4栏";
   }
   .col-md-5 {
     width: 41.66666667%;
   }
-  .col-md-5 .con:before {
+  .col-md-5 > .con:before {
     content: "5栏";
   }
   .col-md-6 {
     width: 50%;
   }
-  .col-md-6 .con:before {
+  .col-md-6 > .con:before {
     content: "6栏";
   }
   .col-md-7 {
     width: 58.33333333%;
   }
-  .col-md-7 .con:before {
+  .col-md-7 > .con:before {
     content: "7栏";
   }
   .col-md-8 {
     width: 66.66666667%;
   }
-  .col-md-8 .con:before {
+  .col-md-8 > .con:before {
     content: "8栏";
   }
   .col-md-9 {
     width: 75%;
   }
-  .col-md-9 .con:before {
+  .col-md-9 > .con:before {
     content: "9栏";
   }
   .col-md-10 {
     width: 83.33333333%;
   }
-  .col-md-10 .con:before {
+  .col-md-10 > .con:before {
     content: "10栏";
   }
   .col-md-11 {
     width: 91.66666667%;
   }
-  .col-md-11 .con:before {
+  .col-md-11 > .con:before {
     content: "11栏";
   }
   .col-md-12 {
     width: 100%;
   }
-  .col-md-12 .con:before {
+  .col-md-12 > .con:before {
     content: "12栏";
   }
 }
@@ -104,73 +121,73 @@ div {
   .col-xs-1 {
     width: 8.33333333%;
   }
-  .col-xs-1 .con:before {
+  .col-xs-1 > .con:before {
     content: "1栏";
   }
   .col-xs-2 {
     width: 16.66666667%;
   }
-  .col-xs-2 .con:before {
+  .col-xs-2 > .con:before {
     content: "2栏";
   }
   .col-xs-3 {
     width: 25%;
   }
-  .col-xs-3 .con:before {
+  .col-xs-3 > .con:before {
     content: "3栏";
   }
   .col-xs-4 {
     width: 33.33333333%;
   }
-  .col-xs-4 .con:before {
+  .col-xs-4 > .con:before {
     content: "4栏";
   }
   .col-xs-5 {
     width: 41.66666667%;
   }
-  .col-xs-5 .con:before {
+  .col-xs-5 > .con:before {
     content: "5栏";
   }
   .col-xs-6 {
     width: 50%;
   }
-  .col-xs-6 .con:before {
+  .col-xs-6 > .con:before {
     content: "6栏";
   }
   .col-xs-7 {
     width: 58.33333333%;
   }
-  .col-xs-7 .con:before {
+  .col-xs-7 > .con:before {
     content: "7栏";
   }
   .col-xs-8 {
     width: 66.66666667%;
   }
-  .col-xs-8 .con:before {
+  .col-xs-8 > .con:before {
     content: "8栏";
   }
   .col-xs-9 {
     width: 75%;
   }
-  .col-xs-9 .con:before {
+  .col-xs-9 > .con:before {
     content: "9栏";
   }
   .col-xs-10 {
     width: 83.33333333%;
   }
-  .col-xs-10 .con:before {
+  .col-xs-10 > .con:before {
     content: "10栏";
   }
   .col-xs-11 {
     width: 91.66666667%;
   }
-  .col-xs-11 .con:before {
+  .col-xs-11 > .con:before {
     content: "11栏";
   }
   .col-xs-12 {
     width: 100%;
   }
-  .col-xs-12 .con:before {
+  .col-xs-12 > .con:before {
     content: "12栏";
   }
 }

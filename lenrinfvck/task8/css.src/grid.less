@@ -5,6 +5,23 @@ div {
     margin: 0;
     padding: 0;
 }
+h2 {
+    text-indent: 20px;
+    border-bottom: 1px solid #999;
+    margin: 0;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.clearfix() {
+    &:after {
+        content: ".";
+        height: 0;
+        display: block;
+        visibility: hidden;
+        clear: both;
+    }
+}
+
 .con {
     background: #eee;
     height: 100%;
@@ -25,13 +42,17 @@ div {
 }
 
 .row {
-    margin: 0 -10px 0 -10px;
+    margin: 0 -10px;
+    .clearfix();
+    .row {
+        margin: -10px;
+    }
 }
 
 .loop-col(@len, @type, @i: 1) when (@i =< @len) {
     .col-@{type}-@{i} {
         width: (@i * 100% / @len);
-        .con:before {
+        &>.con:before {
             content: "@{i}栏";
         }
     }
