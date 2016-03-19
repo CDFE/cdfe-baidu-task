@@ -1,0 +1,44 @@
+/* demo演示用 */
+body,
+html,
+div {
+    margin: 0;
+    padding: 0;
+}
+
+.maincon {
+    display: flex;
+    align-items: center;
+}
+
+.a,
+.b,
+.c,
+.d {
+    border: 1px solid #f00;
+    width: 150px;
+    margin: 20px;
+}
+.a {
+    height: 120px;
+}
+.b {
+    height: 100px;
+}
+.c {
+    height: 40px;
+}
+.d {
+    height: 200px;
+    border-color: #00f;
+}
+
+@media (max-width: 640px) {
+    .maincon {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .d {
+        order: -1;
+    }
+}
