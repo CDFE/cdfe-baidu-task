@@ -8,5 +8,5 @@ leon mathilda lenrinfvck chan pawn
 
 任务 | 参与者 | demo地址 | 代码地址
 --- | --- | --- | ---
-[task8](http://ife.baidu.com/task/detail?taskId=8) | lenrinfvck | [演示地址](https://github.com/CDFE/cdfe-baidu-task/tree/develop/lenrinfvck/task8) | [代码地址](https://github.com/CDFE/cdfe-baidu-task/tree/develop/lenrinfvck/task8)
+[task8](http://ife.baidu.com/task/detail?taskId=8) | lenrinfvck | [演示地址](http://cdfe.github.io/cdfe-baidu-task/lenrinfvck/task8/index.html) | [代码地址](https://github.com/CDFE/cdfe-baidu-task/tree/develop/lenrinfvck/task8)
 
