@@ -77,13 +77,13 @@
             this.flashBox();
             //防止溢出
             function move(x ,y) {
-                if(x > map.w) {
+                if(x > map.w - 1) {
                     x--;
                 } else if(x < 0) {
                     x++;
                 }
-                if(y > map.h) {
-                    x--;
+                if(y > map.h - 1) {
+                    y--;
                 } else if(y < 0) {
                     y++;
                 }
