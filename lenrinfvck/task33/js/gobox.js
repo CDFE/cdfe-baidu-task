@@ -122,6 +122,13 @@
         var str = $('.ctrl-input input').value;
         box.runCom(str);
     });
+    $('body').addEventListener('keydown', function(e) {
+        console.log(e.keyCode);
+        if(e.keyCode === 13) {
+            var str = $('.ctrl-input input').value;
+            box.runCom(str);
+        }
+    });
     //监听按钮
     $('.ctrl-btn').addEventListener('click', function(e) {
         e.preventDefault();
