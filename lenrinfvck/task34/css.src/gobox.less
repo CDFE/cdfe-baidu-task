@@ -1,0 +1,58 @@
+/* demo演示用 */
+body,
+html,
+div {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix() {
+    &:after {
+        content: ".";
+        visibility: hidden;
+        clear: both;
+        height: 0;
+    }
+}
+
+.box-map {
+    margin: 20px auto 0 auto;
+    position: relative;
+    .clearfix();
+}
+.ctrl-btn,
+.ctrl-input {
+    margin: 10px auto;
+    text-align: center;
+    .btn {
+        margin: 5px;
+    }
+}
+
+.map-box {
+    box-sizing: border-box;
+    border: 1px solid #000;
+    float: left;
+}
+
+.gobox {
+    position: absolute;
+    background: #F00;
+    transition: ease 0.4s;
+    box-sizing: border-box;
+    border-top: 10px solid #00F;
+    transform: rotate(0deg);
+}
+
+.d-0 {
+    transform: rotate(0deg);
+}
+.d-1 {
+    transform: rotate(90deg);
+}
+.d-2 {
+    transform: rotate(180deg);
+}
+.d-3 {
+    transform: rotate(270deg);
+}
