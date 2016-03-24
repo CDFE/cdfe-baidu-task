@@ -1,0 +1,114 @@
+/* demo演示用 */
+body,
+html,
+div,
+ul,
+li,
+textarea {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix() {
+    &:after {
+        content: ".";
+        visibility: hidden;
+        clear: both;
+        height: 0;
+    }
+}
+
+.box-map {
+    margin: 20px;
+    float: left;
+    position: relative;
+    .clearfix();
+}
+.ctrl-btn,
+.ctrl-input {
+    margin: 10px auto;
+    text-align: center;
+    .btn {
+        margin: 5px;
+    }
+}
+.ctrl-btn {
+    
+}
+
+.map-box {
+    box-sizing: border-box;
+    border: 1px solid #000;
+    float: left;
+}
+.ctrl-con {
+    margin-left: 500px;
+}
+
+.gobox {
+    position: absolute;
+    background: #F00;
+    transition: ease 0.4s;
+    box-sizing: border-box;
+    border-top: 10px solid #00F;
+    transform: rotate(0deg);
+}
+
+.d-0 {
+    transform: rotate(0deg);
+}
+.d-1 {
+    transform: rotate(90deg);
+}
+.d-2 {
+    transform: rotate(180deg);
+}
+.d-3 {
+    transform: rotate(270deg);
+}
+.ctrl-input {
+    text-align: left;
+    width: 330px;
+    margin: 0 auto;
+}
+
+.my-area {
+    width: 340px;
+    margin: 0 auto;
+    text-align: left;
+    .text-area {
+        display: block;
+        margin-left: 40px;
+        width: 295px;
+        height: 300px;
+        padding-left: 5px;
+        outline: none;
+        background: #000;
+        color: #0F0;
+        font-size: 14px;
+        line-height: 22px;
+        resize: none;
+        border: none;
+        overflow-y: auto;
+    }
+    .left-index {
+        list-style: none;
+        width: 40px;
+        height: 300px;
+        overflow: hidden;
+        float: left;
+        color: #fff;
+        background: #BBB;
+        li {
+            height: 22px;
+            line-height: 22px;
+            text-align: center;
+        }
+        .error {
+            background: #F00;
+        }
+        #curr {
+            background: #00F;
+        }
+    }
+}

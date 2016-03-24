@@ -11,6 +11,7 @@ leon mathilda lenrinfvck chan pawn
 --- | --- | --- | ---
 [task33](http://ife.baidu.com/task/detail?taskId=33) | [lenrinfvck](http://cdfe.github.io/cdfe-baidu-task/lenrinfvck/task33/index.html) | [lenrinfvck](https://github.com/CDFE/cdfe-baidu-task/tree/develop/lenrinfvck/task33)  
 [task34](http://ife.baidu.com/task/detail?taskId=34) | [lenrinfvck](http://cdfe.github.io/cdfe-baidu-task/lenrinfvck/task34/index.html) | [lenrinfvck](https://github.com/CDFE/cdfe-baidu-task/tree/develop/lenrinfvck/task34)  
+[task35](http://ife.baidu.com/task/detail?taskId=35) | [lenrinfvck](http://cdfe.github.io/cdfe-baidu-task/lenrinfvck/task35/index.html) | [lenrinfvck](https://github.com/CDFE/cdfe-baidu-task/tree/develop/lenrinfvck/task35)  
 
 #### 一期任务(4.3截止)
 
