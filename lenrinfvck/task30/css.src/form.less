@@ -1,0 +1,112 @@
+/* demo演示用 */
+body,
+html,
+div,
+input,
+p {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, 'Microsoft Yahei';
+}
+
+
+.clearfix() {
+    &:after {
+        content: ".";
+        height: 0;
+        display: block;
+        visibility: hidden;
+        clear: both;
+    }
+}
+.maincon {
+    padding: 30px;
+    width: 80%;
+    min-width: 600px;
+    .clearfix();
+}
+.form-row {
+    margin-top: 20px;
+}
+label {
+    font-size: 18px;
+    height: 40px;
+    line-height: 24px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    width: 15%;
+    text-align: right;
+    float: left;
+    font-weight: bold;
+}
+
+input {
+    box-sizing: border-box;
+    height: 40px;
+    width: 85%;
+    font-size: 20px;
+    border-radius: 5px;
+    line-height: 40px;
+    border: 1px solid #ccc;
+    text-indent: 10px;
+}
+.btn {
+    float: right;
+    width: 80px;
+    height: 40px;
+    margin-top: 20px;
+    cursor: pointer;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    background: rgb(31, 108, 178);
+    font-size: 18px;
+    color: #fff;
+}
+
+input {
+    &.empty,
+    &.error {
+        border-color: #E00;
+    }
+    &.ok {
+        border-color: #0E0;
+    }
+}
+.msg {
+    margin-top: 5px;
+    color: #ccc;
+    margin-left: 15%;
+    span {
+        display: none;
+    }
+    &.empty {
+        .empty {
+            display: inline-block;
+            color: #E00;
+        }
+    }
+    &.error {
+        .error {
+            display: inline-block;
+            color: #E00;
+        }
+    }
+    &.ok {
+        .ok {
+            display: inline-block;
+            color: #0E0;
+        }
+    }
+    &.normal {
+        .normal {
+            display: inline-block;
+        }
+    }
+}
+
+
+
+
+
