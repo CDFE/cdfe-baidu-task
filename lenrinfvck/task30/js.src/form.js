@@ -1,26 +1,12 @@
 (function() {
     'use strict';
+    //公用方法
     function $(selector) {
         return document.querySelector(selector);
     }
     function $$(selector) {
         return document.querySelectorAll(selector);
     }
-    /*$('.input-con .btn').addEventListener('click', function() {
-        var val = $('.input-con input').value;
-        var $input = $('.input-con');
-        var ch = /[\u4E00-\uFA29]|[\uE7C7-\uE7F3]/g;
-        val = val.replace(/^\s+|\s+$/, '').replace(ch, '++');
-        if(val) {
-            if(/^[\w\W]{4,16}$/.test(val)) {
-                $input.className = 'input-con ok';
-            } else {
-                $input.className = 'input-con error';
-            }
-        }else {
-            $input.className = 'input-con empty';
-        }
-    });*/
     function trim(str) {
         return str.replace(/^\s+|\s+$/, '');
     };
@@ -33,6 +19,7 @@
         }
         return true;
     };
+    //剔除对象的某些属性
     function unpick(obj, arr) {
         var res = {};
         for(var i in obj) {
@@ -42,6 +29,22 @@
         }
         return res;
     }
+
+    /**
+      * 配置属性
+      * mainForm: string, 表单对象的CSS选择器
+      * formList: { #验证策略
+      *     name: string, 空间的name属性
+      *     require: boolean, 必填
+      *     max/min: number, 输入长度 
+      *     equal: string, 检测和该name属性对应的表单的值是否相同 
+      *     reg: string, 自定义正则
+      * },
+      * checkEvent: string, 当控件触发该事件时自动校验
+      * handler: { #配置回调事件
+      *     'eventName': fn(item, ctrl) #触发事件的控件的DOM， 整个表单对象
+      * }
+    **/
     var config = {
         mainForm: '.maincon',
         formList: [
@@ -59,8 +62,10 @@
             equal: 'pass',
         },{
             name: 'email',
+            reg: '^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*'
         },{
             name: 'tel',
+            reg: '^1[3458][0-9]\\d{8}$'
         },
         ],
         checkEvent: 'blur',
@@ -78,6 +83,9 @@
             }
         }
     };
+
+    //校验依赖数据与方法
+    var ch = /[\u4E00-\uFA29]|[\uE7C7-\uE7F3]/g;
     var checkFn = {
         require : function(val) {
             if(!trim(val)) {
@@ -87,9 +95,21 @@
         },
         equal: function(val, name) {
             return val === $('[name='+name+']').value;
+        },
+        min: function(val, len) {
+            val = trim(val).replace(ch, '++');
+            return val.length >= len;
+        },
+        max: function(val, len) {
+            val = trim(val).replace(ch, '++');
+            return val.length <= len;
+        },
+        reg: function(val, regStr) {
+            return (new RegExp(regStr)).test(val);
         }
     };
 
+    //主表单对象，传入以上config初始化
     function FormCtrl(opt) {
         this.dom = $(opt.mainForm);
         this.formList = opt.formList;
@@ -136,8 +156,22 @@
         render: function(item, status) {
             item.className = status;
             item.parentNode.querySelector('.msg').className = 'msg ' + status;
+        },
+        upData: function(cb) {
+            var itemList = this.itemList;
+            var item;
+            for(var i in itemList) {
+                item = itemList[i];
+                item.check();
+                if(!/ok|normal/.test(item.status)) {
+                    alert(item.item.parentNode.querySelector('span.'+item.status).innerText);
+                    return false;
+                }
+            }
+            alert('校验通过');
         }
     }
+    //单个表单控件对象
     function FormItem(opt, ctrl) {
         this.item = ctrl.dom.querySelector('[name='+opt.name+']');
         this.task = opt;
@@ -158,17 +192,17 @@
             if(checkFn.require(val)) {
                 if(task.require) {
                     _this.status = 'empty';
-                    return false;
                 }else {
                     _this.status = 'normal';
                 }
+                return false;
             }else {
                 _this.status = 'ok';
             }
             if(!isEmpty(_task)) {
                 for(var key in _task) {
                     if(checkFn[key]) {
-                        checkFn[key](val, _task[key]) ? flag = true : flag = false;
+                        checkFn[key](val, _task[key]) ? flag &= true : flag &= false;
                     }
                 }
                 flag ? _this.status = 'ok' : _this.status = 'error';
@@ -177,5 +211,9 @@
             return false;
         }
     }
+    //启动表单校验
     var formCtrl = new FormCtrl(config);
+    $('.btn').addEventListener('click', function() {
+        formCtrl.upData();
+    });
 })();
