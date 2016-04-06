@@ -1,0 +1,1 @@
+!function(){function n(n){return document.querySelector(n)}n(".input-con .btn").addEventListener("click",function(){var e=n(".input-con input").value,t=n(".input-con"),c=/[\u4E00-\uFA29]|[\uE7C7-\uE7F3]/g;e=e.replace(/^\s+|\s+$/,"").replace(c,"++"),e?/^[\w\W]{4,16}$/.test(e)?t.className="input-con ok":t.className="input-con error":t.className="input-con empty"})}();
